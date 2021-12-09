@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Ubuntu:wght@300&display=swap');
+
+$light: white;
+$bg: #253241;
+$primary: darken($bg, 3%);
+$primary-text: white;
+$secondary: darken($bg, 3%);
+$secondary-text: white;
+$button-width: 220px;
+$spacing: 20px;
+
+html {
+  font-family: 'Ubuntu', sans-serif;
+  background: $bg;
+  color: $primary-text;
+}
+
+.pagetitle {
+  h1 {
+    margin: $spacing 0 0;
+  }
+}
+
+.header {
+  margin-top: $spacing;
+
+  img {
+    height: 100px;
+  }
+}
+
+.container {
+  height: 96vh;
+  padding: 2vh;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.flex {
+
+  display: flex;
+
+  &.flex-column {
+    flex-direction: column;
+  }
+
+  &.flex-row {
+    flex-direction: row;
+  }
+
+  &.flex-space-between {
+    justify-content: space-between;
+  }
+
+  &.flex-space-evenly {
+    justify-content: space-evenly;
+  }
+
+  &.flex-space-around {
+    justify-content: space-around;
+  }
+
+  &.flex-center {
+    align-items: center;
+  }
+
+  &.flex-middle {
+    justify-content: center;
+  }
+
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+.list {
+  font-size: 20px;
+  line-height: 1;
+
+  .list-item {
+
+    &:not(:last-child) {
+      margin: 0 0 $spacing;
+    }
+
+    h3 {
+      margin: 0 0 $spacing;
+    }
+  }
+}
+
+.card {
+  padding: $spacing;
+  width: 340px;
+  height: 300px;
+  display: flex;
+  margin: $spacing 0;
+
+  &:not(:last-child) {
+    margin-right: $spacing;
+  }
+
+  &--light {
+    background: $light;
+    color: $primary;
+  }
+
+  &--primary {
+
+    background: $primary;
+    color: $primary-text;
+  }
+}
+
+button, .button {
+  padding: $spacing;
+  border: none;
+  border-radius: $spacing;
+  color: $secondary-text;
+  background-color: $secondary;
+  width: $button-width;
+}
+
+.upload {
+  padding: $spacing;
+  background: 0 0;
+  border: 1px dashed #e5e5e5;
+  text-align: center;
+}
+
+.progress {
+  vertical-align: baseline;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  display: block;
+  border: 0;
+  background-color: #f8f8f8;
+  margin: $spacing 0 0;
+  height: 15px;
+  border-radius: 500px;
+  overflow: hidden;
+
+  &:indeterminate {
+    color: transparent
+  }
+
+  &::-webkit-progress-bar {
+    background-color: #f8f8f8;
+    border-radius: 500px;
+    overflow: hidden
+  }
+
+  &:indeterminate::-moz-progress-bar {
+    width: 0
+  }
+
+  &::-webkit-progress-value {
+    background-color: #1e87f0;
+    transition: width .6s ease
+  }
+
+  &::-moz-progress-bar {
+    background-color: #1e87f0
+  }
+
+  &::-ms-fill {
+    background-color: #1e87f0;
+    transition: width .6s ease;
+    border: 0
+  }
+
+}
+
+.winner {
+  font-size: 24px;
+  text-align: center;
+}
