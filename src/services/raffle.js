@@ -5,13 +5,15 @@ export const EXCLUDED_EMAILS = [
     'sergio_kagiema@live.com',
     'emazyka@gmail.com',
     'emazika@outlook.com',
+    'panopoulos.and@gmail.com',
     'emazika@gmail.com'
 ];
 
 export const parseCsvFile = (csv) => {
     const [, ...lines] = csv.split('\n');
+    const timestampRegex = /^\d{1,2}\/\d{1,2}\/\d{4} \d{1,2}:\d{2}:\d{2},.+$/;
     const names = lines.reduce((acc = {}, line) => {
-        const lineHasTimeStamp = line && /"\d{4}\/\d{2}\/\d{2}/.test(line);
+        const lineHasTimeStamp = line && timestampRegex.test(line);
         if (!lineHasTimeStamp) return acc;
         const [
             ,

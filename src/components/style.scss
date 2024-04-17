@@ -130,6 +130,16 @@ button, .button {
   width: $button-width;
 }
 
+button, .button,
+button span, .button span {
+  cursor: pointer;
+}
+
+button:disabled, .button:disabled,
+button:disabled span, .button:disabled span {
+  cursor: not-allowed;
+}
+
 .upload {
   padding: $spacing;
   background: 0 0;

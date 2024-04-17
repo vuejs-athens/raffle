@@ -38,12 +38,13 @@ export default {
       isFirstRoll: true,
       entrants: [],
       results: [],
+      isRunning: false,
       prizes: getPrizes()
     };
   },
   computed: {
     disabledRaffle() {
-      return this.prizes.length === 0;
+      return this.isRunning || this.prizes.length === 0;
     }
   },
   methods: {
@@ -62,6 +63,7 @@ export default {
       setDeceleratingTimeout(this.setResult, 10, 30, this.onRollEnd);
     },
     onRollStart() {
+      this.isRunning = true;
       this.result = undefined;
     },
     onRollEnd() {
@@ -75,6 +77,7 @@ export default {
       this.isFirstRoll = this.results.length <= 0;
       this.entrants = this.entrants.filter(name => name !== this.result);
       this.prizes.shift();
+      this.isRunning = false;
     }
   }
 };
