@@ -1,7 +1,17 @@
 [
   {
-    "count": 2,
+    "count": 1,
     "content": "CityJS",
     "fulltext": "Conf Ticket"
+  },
+  {
+    "count": 2,
+    "content": "Books",
+    "fulltext": "TS for Beginners"
+  },
+  {
+    "count": 1,
+    "content": "T-Shirt",
+    "fulltext": "Bryntum"
   }
 ]
