@@ -11,10 +11,10 @@ export const EXCLUDED_EMAILS = [
 
 export const parseCsvFile = (csv) => {
     const [, ...lines] = csv.split('\n');
-    const timestampRegex = /^\d{1,2}\/\d{1,2}\/\d{4} \d{1,2}:\d{2}:\d{2},.+$/;
+    // const timestampRegex = /^\d{1,2}\/\d{1,2}\/\d{4} \d{1,2}:\d{2}:\d{2},.+$/;
     const names = lines.reduce((acc = {}, line) => {
-        const lineHasTimeStamp = line && timestampRegex.test(line);
-        if (!lineHasTimeStamp) return acc;
+        // const lineHasTimeStamp = line && timestampRegex.test(line);
+        // if (!lineHasTimeStamp) return acc;
         const [
             ,
             name,
