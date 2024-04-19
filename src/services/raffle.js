@@ -17,8 +17,8 @@ export const parseCsvFile = (csv) => {
         if (!lineHasTimeStamp) return acc;
         const [
             ,
-            email,
-            name
+            name,
+            email
         ] = line.split(',');
         const quotesRegex = /['"]+/g;
         const key = !!email && email.trim().replace(quotesRegex, '') || '';
